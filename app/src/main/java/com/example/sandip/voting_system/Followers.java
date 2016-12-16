@@ -49,7 +49,7 @@ public class Followers extends AppCompatActivity implements View.OnClickListener
         flwPlus.setOnClickListener(Followers.this);
         getData();
     }
-    
+
     private void getData() {
         StringRequest stringRequest = new StringRequest(Request.Method.POST,FOLLOW_URL ,
                 new Response.Listener<String>() {

@@ -92,7 +92,7 @@ public class registration extends AppCompatActivity implements View.OnClickListe
             final String pos=numbers[sp1.getSelectedItemPosition()];
 
 
-        Log.i("My TEST", Name+" "+email+" "+password+" "+phone+" "+org1+" "+gender+" "+pos);
+       // Log.i("My TEST", Name+" "+email+" "+password+" "+phone+" "+org1+" "+gender+" "+pos);
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, REGISTER_URL,
                 new Response.Listener<String>() {
