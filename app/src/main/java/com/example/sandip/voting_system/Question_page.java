@@ -66,8 +66,8 @@ public class Question_page extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent next= new Intent(getApplicationContext(), question_answer.class);
-               // next.putExtra("value",Integer.toString(i));
-               // startActivity(next);
+                next.putExtra("value",Integer.toString(i));
+                startActivity(next);
             }
         });
     }
