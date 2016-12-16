@@ -47,36 +47,10 @@ public class Followers extends AppCompatActivity implements View.OnClickListener
 
         flwPlus = (Button) findViewById(R.id.buttonFLWP);
         flwPlus.setOnClickListener(Followers.this);
-        getData();
+        //getData();
 
     }
-    private void getData() {
-        StringRequest stringRequest = new StringRequest(Request.Method.POST,FOLLOW_URL ,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Log.i("MY TEST",response);
 
-                        showJSON(response);
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(Followers.this,error.getMessage().toString(),Toast.LENGTH_LONG).show();
-                    }
-                }){
-            protected Map<String,String> getParams(){
-                Map<String,String> params = new HashMap<String, String>();
-
-                params.put(KEY_EMAIL,email);
-                return params;
-            }
-
-        };
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);
-    }
     private void showJSON(String json){
         ParseJSON_follow pj = new ParseJSON_follow(json);
         pj.parseJSON_follow();
